@@ -81,7 +81,7 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/M0JPI"
-      - label: "YouTube"
+    - label: "YouTube"
       icon: "fab fa-fw fa-youtube"
       url: "https://www.youtube.com/channel/UCgw-p_E2i3nQuJ85uvOskqA"
 
