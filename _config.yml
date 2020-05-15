@@ -76,7 +76,7 @@ author:
 footer:
   links:
     - label: "Website"
-      icon: "fab fa-fw fa-link"
+      icon: "fab fa-fw fa-github-square"
       url: "https://m0jpi.github.io/red-pitaya-projects/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
