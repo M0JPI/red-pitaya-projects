@@ -15,4 +15,4 @@ tags:
 Welcome to my blog. Here I hope to record my adventures with electronics, open source programming, amateur radio and the Red Pitaya development boards.
 I have created a [YouTube channel](https://www.youtube.com/channel/UCgw-p_E2i3nQuJ85uvOskqA) to go together with this blog. Please feel free to take a look, like, subscribe and comment on my videos.
 
-[![Welcome to my YouTube Channel](http://img.youtube.com/vi/jLfoiPJWwjQ/0.jpg)](http://www.youtube.com/watch?v=jLfoiPJWwjQ "Channel Introduction")
+{% include video id="jLfoiPJWwjQ" provider="youtube" %}
