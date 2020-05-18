@@ -18,4 +18,4 @@ The Red Pitaya is a single board computer, with an ARM processor, like the Raspb
 
 During lockdown I got my kit out and have been sent some new boards to try by Red Pitaya themselves.
 
-[![Red Pitaya Introduction](http://img.youtube.com/vi/-_6KotLDS6I/0.jpg)](http://www.youtube.com/watch?v=-_6KotLDS6I "Red Pitaya Introduction")
+{% include video id="-_6KotLDS6I" provider="youtube" %}
