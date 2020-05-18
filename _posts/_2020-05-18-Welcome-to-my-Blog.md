@@ -1,5 +1,5 @@
 ---
-title: "Welcome to my Blog!"
+title: "Welcome to my Blog"
 date: 2020-05-18T17:15:00+01:00
 categories:
   - blog
