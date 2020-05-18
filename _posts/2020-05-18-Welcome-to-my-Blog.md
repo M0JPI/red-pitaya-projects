@@ -2,14 +2,14 @@
 title: "Welcome to my Blog"
 date: 2020-05-18T17:15:00+01:00
 categories:
-  - blog
+  - Blog
   - Red Pitaya
   - YouTube
   - Amateur Radio
 tags:
   - Red Pitaya
   - YouTube
-  - update
+  - Update
 ---
 
 Welcome to my blog. Here I hope to record my adventures with electronics, open source programming, amateur radio and the Red Pitaya development boards.
