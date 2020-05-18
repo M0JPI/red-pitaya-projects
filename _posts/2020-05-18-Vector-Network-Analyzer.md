@@ -15,8 +15,8 @@ tags:
 ---
 
 After setting up my amateur radio home station. I wanted to test my antenna performance and see what frequencies it performed best at.
-The [Red Pitaya Vector Network Analayzer](https://www.redpitaya.com/f172/vector-network-analyzer-module) was a good tool to do this as I had already bought a Red Pitaya board.
+The [Red Pitaya Vector Network Analyzer](https://www.redpitaya.com/f172/vector-network-analyzer-module) was a good tool to do this as I had already bought a Red Pitaya board.
 
 You can see what I found in the video below:
 
-{% include video id="-w97yiPHSQA0" provider="youtube" %}
+{% include video id="w97yiPHSQA0" provider="youtube" %}
