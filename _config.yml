@@ -72,6 +72,7 @@ author:
     - label: "YouTube"
       icon: "fab fa-fw fa-youtube"
       url: "https://www.youtube.com/channel/UCgw-p_E2i3nQuJ85uvOskqA"
+  logo: "/assets/images/bio-photo.jpg"
 
 footer:
   links:
