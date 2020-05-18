@@ -2,13 +2,13 @@
 title: "Red Pitaya Introduction"
 date: 2020-05-18T18:17:00+01:00
 categories:
-  - blog
+  - Blog
   - Red Pitaya
   - YouTube
 tags:
   - Red Pitaya
   - YouTube
-  - update
+  - Update
   - Introduction
 ---
 
