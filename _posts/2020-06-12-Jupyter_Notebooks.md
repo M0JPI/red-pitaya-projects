@@ -12,6 +12,7 @@ tags:
   - Temperature Measurement
   - Slow ADC
   - Fast ADC
+  - Audio
 ---
 
 The Jupyter Notebook server on the Red Pitaya is the easiest way to program the Red Pitaya. It is especially suited to data science and machine learning as Python modules are available for these and integrate well into the Jupyter system.
