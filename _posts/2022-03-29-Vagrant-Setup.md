@@ -19,3 +19,5 @@ I'm interested in making code easy to follow and reproduce. I looked at what [Py
 As well as finding instructions on Pynq I also found Vagrant [Quick Start for Windows 10](https://www.swtestacademy.com/quick-start-vagrant-windows-10/).
 
 I used both of these instructions to create a Vagrant instance to use as a development machine that can be conistant with what Pynq uses.
+
+To setup Vitis 2020.1 I had to set `/etc/os-release` to `VERSION="18.04.4 LTS (Bionic Beaver)"`.
