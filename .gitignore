@@ -3,5 +3,5 @@ _site
 .jekyll-metadata
 Gemfile.lock
 .ipynb_checkpoints
-CSV-data
+jupyter-notebooks/CSV-Data/
 .gitignore
