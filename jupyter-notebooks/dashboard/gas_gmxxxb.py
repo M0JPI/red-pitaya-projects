@@ -23,8 +23,6 @@
     
 
 from smbus2 import SMBus, i2c_msg
-#import time
-#import math
 
 __version__ = '1.1.1'
 

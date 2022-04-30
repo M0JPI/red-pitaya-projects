@@ -84,6 +84,15 @@ class BME680(BME680Data):
         else:
             self.set_gas_status(constants.ENABLE_GAS_MEAS_LOW)
         self.set_temp_offset(0)
+        
+        # Up to 10 heater profiles can be configured, each
+        # with their own temperature and duration.
+        # sensor.set_gas_heater_profile(200, 150, nb_profile=1)
+        # sensor.select_gas_heater_profile(1)
+        sensor.set_gas_heater_temperature(320)
+        sensor.set_gas_heater_duration(150)
+        sensor.select_gas_heater_profile(0)
+        
         self.get_sensor_data()
 
     def _get_calibration_data(self):
