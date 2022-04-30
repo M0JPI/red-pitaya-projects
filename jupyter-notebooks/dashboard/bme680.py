@@ -59,7 +59,7 @@ class BME680(BME680Data):
         self._i2c = i2c_device
         if self._i2c is None:
             import smbus
-            self._i2c = smbus.SMBus(1)
+            self._i2c = smbus.SMBus(0)
 
         try:
             self.chip_id = self._get_regs(constants.CHIP_ID_ADDR, 1)
@@ -85,15 +85,19 @@ class BME680(BME680Data):
             self.set_gas_status(constants.ENABLE_GAS_MEAS_LOW)
         self.set_temp_offset(0)
         
+        #Needs the ambient temperature to set the heater profile
+        self.get_sensor_data()
         # Up to 10 heater profiles can be configured, each
         # with their own temperature and duration.
-        # sensor.set_gas_heater_profile(200, 150, nb_profile=1)
-        # sensor.select_gas_heater_profile(1)
-        sensor.set_gas_heater_temperature(320)
-        sensor.set_gas_heater_duration(150)
-        sensor.select_gas_heater_profile(0)
+        # heater profile 0 with 320 degree Celsius as target temperature and 150 ms heating duration is the original default
+        # the data sheet, says target temperatures between 200 and 400 degrees Celsius are typical and about 20 to 30 ms are
+        # necessary for the heater to reach the desired target temperature, so 40ms has been used as the default for this
+        # library.
+        self.set_gas_heater_profile(320, 40, nb_profile=0)
+        #self.set_gas_heater_temperature(320)
+        #self.set_gas_heater_duration(150)
+        #self.select_gas_heater_profile(0)
         
-        self.get_sensor_data()
 
     def _get_calibration_data(self):
         """Retrieve the sensor calibration data and store it in .calibration_data."""
