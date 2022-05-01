@@ -56,7 +56,6 @@ class GAS_GMXXX():
             self.preheated()
         else:
             self.unPreheated()
-        print("Gas Sensors setup: ",isPreheated)
         
     def preheated(self):
         msg = i2c_msg.write(self.i2c_address, [self.WARMING_UP])
