@@ -27,10 +27,15 @@ class collect_air_object():
     #Analog sensors setup
     ANALOG_TEMP = None
     voc_air_pin = None # define which pin will be used for VOC sensor
-    voc_air_ref = 0.140 #Refrence value considered zero VOC
-
+    voc_air_ref = 0.2157 #Refrence value considered zero VOC
     analog_alcohol_pin = FPGA.analog_in(3) # define which pin will be used for alcohol sensor
-    alcohol_air_ref = 1.885
+    alcohol_air_ref = 2.3864
+    
+    #Digital sensors setup
+    GM102B_ref = 1.6516
+    GM302B_ref = 1.2871
+    GM502B_ref = 1.0097
+    GM702B_ref = 0.9516
     
     def __init__(self,UART_object='/dev/ttyPS1', 
                  bme_680_object = bme680.BME680(i2c_addr=0x76, i2c_device=None),
@@ -48,10 +53,14 @@ class collect_air_object():
         B = 4275; # B value of the thermistor
         return (1.0/(math.log10(Rntc/100000.0)/B+1/298.15)-273.15) #convert to temperature via datasheet 
     
-    def reset_initial_values(self):
+    def reset_ref_values(self):
         self.voc_air_ref = self.voc_air_pin.read()
         self.alcohol_air_ref = self.analog_alcohol_pin.read()
-        return self.voc_air_ref,self.alcohol_air_ref;
+        self.GM102B_ref = self.gas_gmxxxb.getGM102B_volts()
+        self.GM302B_ref = self.gas_gmxxxb.getGM302B_volts()
+        self.GM502B_ref = self.gas_gmxxxb.getGM502B_volts()
+        self.GM702B_ref = self.gas_gmxxxb.getGM702B_volts()
+        return self.voc_air_ref,self.alcohol_air_ref,self.GM102B_ref,self.GM302B_ref,self.GM502B_ref,self.GM702B_ref;
     
     def analog_temp(self):
         Va0=self.ANALOG_TEMP.read() # read voltage of sensor
@@ -62,10 +71,8 @@ class collect_air_object():
     
     def analog_voc_ratio(self):
         self.voc_volt = self.voc_air_pin.read()
-        self.voc_gas = self.voc_volt/(5.0)
-        return (self.voc_gas/self.voc_air_ref);
+        return (self.voc_volt/self.voc_air_ref);
     
     def analog_alcohol_ratio(self):
         self.alcohol_volt = self.analog_alcohol_pin.read()
-        self.alcohol_gas = self.alcohol_volt/(5.0-self.alcohol_volt)
-        return 1/(self.alcohol_gas/self.alcohol_air_ref);
+        return 1/(self.alcohol_volt/self.alcohol_air_ref);
