@@ -360,7 +360,7 @@ class BME680(BME680Data):
             else:
                 self.data.gas_resistance = self._calc_gas_resistance_low(adc_gas_res_low, gas_range_l)
 
-            return True
+            return self.data
 
         return False
 
