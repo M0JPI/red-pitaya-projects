@@ -32,6 +32,10 @@ I2C_ADDR_SECONDARY = 0x77
 # BME680 unique chip identifier
 CHIP_ID = 0x61
 
+#Gas voltage in clean air (after a burn in period ~30 minutes)
+GAS_REF = 1.8
+GAS_CURRENT = 0.00003
+
 # BME680 coefficients related defines
 COEFF_SIZE = 41
 COEFF_ADDR1_LEN = 25
@@ -295,6 +299,8 @@ class FieldData:
         self.humidity = None
         # Gas resistance in Ohms
         self.gas_resistance = None
+        self.gas_volts = None
+        self.gas_rel = None
 
 
 class CalibrationData:

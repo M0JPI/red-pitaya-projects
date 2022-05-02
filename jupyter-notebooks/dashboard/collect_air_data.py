@@ -36,6 +36,9 @@ class collect_air_object():
     GM302B_ref = 1.2871
     GM502B_ref = 1.0097
     GM702B_ref = 0.9516
+    pms_ref_0_3 = 252
+    pms_ref_0_5 = 39
+    pms_ref_1_0 = 25
     
     def __init__(self,UART_object='/dev/ttyPS1', 
                  bme_680_object = bme680.BME680(i2c_addr=0x76, i2c_device=None),
@@ -60,7 +63,12 @@ class collect_air_object():
         self.GM302B_ref = self.gas_gmxxxb.getGM302B_volts()
         self.GM502B_ref = self.gas_gmxxxb.getGM502B_volts()
         self.GM702B_ref = self.gas_gmxxxb.getGM702B_volts()
-        return self.voc_air_ref,self.alcohol_air_ref,self.GM102B_ref,self.GM302B_ref,self.GM502B_ref,self.GM702B_ref;
+        bme_latest = self.bme_680.get_sensor_data()
+        
+        return (self.voc_air_ref,self.alcohol_air_ref,
+                self.GM102B_ref,self.GM302B_ref,self.GM502B_ref,self.GM702B_ref,
+                #Only included in the return to avoid polling twice
+                self.bme_680.reset_gas_ref());
     
     def analog_temp(self):
         Va0=self.ANALOG_TEMP.read() # read voltage of sensor
@@ -70,9 +78,25 @@ class collect_air_object():
         return self.res_to_temp(Rntc);
     
     def analog_voc_ratio(self):
-        self.voc_volt = self.voc_air_pin.read()
-        return (self.voc_volt/self.voc_air_ref);
+        voc_volt = self.voc_air_pin.read()
+        return (voc_volt/self.voc_air_ref);
     
     def analog_alcohol_ratio(self):
-        self.alcohol_volt = self.analog_alcohol_pin.read()
-        return 1/(self.alcohol_volt/self.alcohol_air_ref);
+        alcohol_volt = self.analog_alcohol_pin.read()
+        return 1/(alcohol_volt/self.alcohol_air_ref);
+    
+    def GM102B_ratio(self):
+        GM102B_volt = self.gas_gmxxxb.getGM102B_volts()
+        return (GM102B_volt/self.GM102B_ref);
+    
+    def GM302B_ratio(self):
+        GM302B_volt = self.gas_gmxxxb.getGM302B_volts()
+        return (GM302B_volt/self.GM302B_ref);
+    
+    def GM502B_ratio(self):
+        GM502B_volt = self.gas_gmxxxb.getGM502B_volts()
+        return (GM502B_volt/self.GM502B_ref);
+    
+    def GM702B_ratio(self):
+        GM702B_volt = self.gas_gmxxxb.getGM702B_volts()
+        return (GM702B_volt/self.GM702B_ref);

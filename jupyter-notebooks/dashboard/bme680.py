@@ -85,6 +85,8 @@ class BME680(BME680Data):
             self.set_gas_status(constants.ENABLE_GAS_MEAS_LOW)
         self.set_temp_offset(0)
         
+        #Set current reference voltage from the constansts file
+        self.gas_ref = constants.GAS_REF
         #Needs the ambient temperature to set the heater profile
         self.get_sensor_data()
         # Up to 10 heater profiles can be configured, each
@@ -359,10 +361,18 @@ class BME680(BME680Data):
                 self.data.gas_resistance = self._calc_gas_resistance_high(adc_gas_res_high, gas_range_h)
             else:
                 self.data.gas_resistance = self._calc_gas_resistance_low(adc_gas_res_low, gas_range_l)
-
+            
+            self.data.gas_volts = self.data.gas_resistance*constants.GAS_CURRENT
+            self.data.gas_rel = 1/(self.data.gas_volts/self.gas_ref)
+            
             return self.data
 
         return False
+    
+    def reset_gas_ref(self):
+        self.get_sensor_data()
+        self.gas_ref = self.data.gas_volts
+        return self.gas_ref
 
     def _set_bits(self, register, mask, position, value):
         """Mask out and set one or more bits in a register."""
