@@ -5,4 +5,9 @@ Gemfile.lock
 .ipynb_checkpoints
 */CSV-Data/
 .gitignore
+<<<<<<< HEAD
 __pycache__/
+=======
+__pycache__/__pycache__/
+
+>>>>>>> 58dbda7465f33382cf63cb5c7e6e9df8b1089864
