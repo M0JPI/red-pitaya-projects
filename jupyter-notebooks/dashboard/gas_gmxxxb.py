@@ -1,8 +1,7 @@
 ##    Multichannel_Gas_GMXXX.cpp
 ##    Description: A drive for Seeed Grove Multichannel gas sensor V2.0.
-##    2019 Copyright (c) Seeed Technology Inc.  All right reserved.
-##    Author: Hongtai Liu(lht856@foxmail.com) ported to Python by John Bracegirdle M0JPI
-##    2019-6-18
+##    2019 Copyright (c) Seeed Technology Inc.  All right reserved. 2019-6-18
+##    Author: Hongtai Liu(lht856@foxmail.com) ported to Python by John Bracegirdle M0JPI 2002
 
 ##    The MIT License (MIT)
 ##    Permission is hereby granted, free of charge, to any person obtaining a copy
