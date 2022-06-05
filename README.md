@@ -10,4 +10,4 @@ I have a [YouTube Playlist](https://youtube.com/playlist?list=PLvvInZopn1uD8gIRC
 
 ## Code Repository
 ### Jupyter-notebooks
-My main projects are written using Jupyter notebooks they include examples in the signal processing and machine learning.
+Most of my projects are written using Jupyter notebooks they include examples in the signal processing and machine learning.
