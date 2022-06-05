@@ -1,6 +1,6 @@
 # M0JPI Red Pitaya Projects
 
-My GitHub Repository contains a blog recording my progress with the Red Pitaya and a code repository for my projects.
+[My GitHub Repository](https://github.com/M0JPI/red-pitaya-projects) contains a blog recording my progress with the Red Pitaya and a code repository for my projects.
 
 ## Blog
 
