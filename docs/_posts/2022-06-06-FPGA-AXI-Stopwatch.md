@@ -16,4 +16,4 @@ Today I started working with the FPGA fabric. I tried out the [FPGA lessons](htt
 I found lesson 4 particulary interesting as it shows how to connect the PS and PL sections of the Zynq chip using AXI.
 I also experimented with changing the clock speed of the PL fabric. I found that could reliably run from 300KHz to 2500MHz. It is rated for down to 100KHz, but I had timing problems with that,
 maybe due to the latancy with transfering data of the Red Pitaya and to my web browser with a slow PL clock. I found that you need to stop the clock to make large changes to the speed.
-My nootbook with the memory map in Python is in this repository https://github.com/M0JPI/red-pitaya-projects/blob/master/jupyter-notebooks/fpga_axi_interfaces/Stopwatch.ipynb
+[My notebook](https://github.com/M0JPI/red-pitaya-projects/blob/master/jupyter-notebooks/fpga_axi_interfaces/Stopwatch.ipynb) with the memory map in Python is in this repository.
