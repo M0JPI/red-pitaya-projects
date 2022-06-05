@@ -4,7 +4,7 @@ My GitHub Repository contains a blog recording my progress with the Red Pitaya a
 
 ## Blog
 
-[My blog](https://m0jpi.github.io/red-pitaya-projects/) has been built as a Jekyll site with GitHub Pages it can be accessed [here](https://m0jpi.github.io/red-pitaya-projects/).
+[My blog has been built as a Jekyll site](https://m0jpi.github.io/red-pitaya-projects/) with GitHub Pages the source is in the docs folder.
 
 
 ## Code Repository
