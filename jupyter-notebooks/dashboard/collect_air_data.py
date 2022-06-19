@@ -65,13 +65,15 @@ class collect_air_object():
     def __init__(self,UART_object='/dev/ttyPS1', 
                  bme_680_object = bme680.BME680(i2c_addr=0x76, i2c_device=None),
                  ANALOG_TEMP_pin = FPGA.analog_in(1),
-                 voc_pin = FPGA.analog_in(2)):
+                 voc_pin = FPGA.analog_in(2),
+                 analog_alcohol_pin = FPGA.analog_in(3)):
         
         self.bme_680 = bme_680_object
         self.UART_device = UART_object
         self.pms5003 = PMS5003(UART_object,baudrate=9600)
         self.ANALOG_TEMP = ANALOG_TEMP_pin
         self.voc_air_pin = voc_pin
+        self.analog_alcohol_pin = analog_alcohol_pin
     
     #Grove analog temperature sensor V1.2 
     def res_to_temp(self,Rntc):
@@ -86,6 +88,7 @@ class collect_air_object():
         self.GM502B_ref = self.gas_gmxxxb.getGM502B_volts()
         self.GM702B_ref = self.gas_gmxxxb.getGM702B_volts()
         bme_latest = self.bme_680.get_sensor_data()
+        self.alcohol_air_ref = self.analog_alcohol_pin.read()
         
         return (self.voc_air_ref,self.alcohol_air_ref,
                 self.GM102B_ref,self.GM302B_ref,self.GM502B_ref,self.GM702B_ref,
