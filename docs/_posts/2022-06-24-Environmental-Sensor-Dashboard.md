@@ -23,7 +23,6 @@ I connected sensors to the analog, I2C and serial UART connections as shown in t
 ![Sensor Setup Diagram](/red-pitaya-projects/assets/images/Sensor-Setup.png)
 
 The Grove analog alcohol sensor needs the SCL pin to be held LOW to operate. I did this using jumper wires to connect the SCL pin to ground.
-The [Jupyter Notebook can be found here.
+The [Jupyter Notebook can be found here](https://github.com/M0JPI/red-pitaya-projects/blob/master/jupyter-notebooks/dashboard/air_quality_dashboard.ipynb).
 
 ![Sensor Setup Diagram](/red-pitaya-projects/assets/images/dashboard-example.png)
-](https://github.com/M0JPI/red-pitaya-projects/blob/master/jupyter-notebooks/dashboard/air_quality_dashboard.ipynb)
