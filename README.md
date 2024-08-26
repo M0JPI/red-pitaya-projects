@@ -14,5 +14,7 @@ Most of my projects are written using Jupyter notebooks they include examples in
 
 ## Setup
 To make these projects show up in the Red Pitaya JupyterLab run the following commands form the command line:
-`git clone https://github.com/M0JPI/red-pitaya-projects.git
-ln -s /root/red-pitaya-projects/ /home/jupyter/`
+
+`git clone https://github.com/M0JPI/red-pitaya-projects.git`
+
+`ln -s /root/red-pitaya-projects/ /home/jupyter/`
