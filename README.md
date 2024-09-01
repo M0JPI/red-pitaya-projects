@@ -18,5 +18,3 @@ To make these projects show up in the Red Pitaya JupyterLab run the following co
 `git clone https://github.com/M0JPI/red-pitaya-projects.git`
 
 `ln -s /root/red-pitaya-projects/ /home/jupyter/`
-
-`chmod +x red-pitaya-projects/jupyter-notebooks/edge_impulse_audio/modelfile.eim`
