@@ -1,0 +1,2 @@
+api_key = "ei_fad5bf5e8352ebff20cf97a79d0b1c252a8b4ffedbf103cac7c4edb6f60ea080"
+HMAC_KEY = "a0566f22b746e3d53ab7297aa8d0835a"
