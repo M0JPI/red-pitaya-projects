@@ -18,3 +18,6 @@ To make these projects show up in the Red Pitaya JupyterLab run the following co
 `git clone https://github.com/M0JPI/red-pitaya-projects.git`
 
 `ln -s /root/red-pitaya-projects/ /home/jupyter/`
+
+## Edge Impulse Project
+My Edge Impulse audio classification project [can be found here](https://studio.edgeimpulse.com/public/440448/live)
